@@ -1,0 +1,6 @@
+<p>Game detail :</p>
+<div *ngIf="game">
+  <h3>{{ game.name }}</h3>
+  <p>{{ game.description }}</p>
+  <button type="button" (click)="delete()">- Remove</button>
+</div>

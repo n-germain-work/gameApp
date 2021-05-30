@@ -1,0 +1,30 @@
+<form [formGroup]="addGameForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Game : </label>
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+      placeholder="Game name"
+    />
+  </div>
+  <div>
+    <label for="description">Description : </label>
+    <textarea
+      name="description"
+      id="description"
+      formControlName="description"
+      placeholder="Game description"
+      cols="30"
+      rows="10"
+    ></textarea>
+  </div>
+  <button type="submit">+ Add game</button>
+</form>
+<div *ngFor="let item of items">
+  <h3>{{ item.name }}</h3>
+  <p>{{ item.description }}</p>
+  <button type="button">
+    <a [routerLink]="['/games', item.id]">detail</a>
+  </button>
+</div>
